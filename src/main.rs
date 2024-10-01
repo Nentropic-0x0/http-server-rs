@@ -52,7 +52,7 @@ use std::io::{stdout, Write};
 
 use curl::easy::{Easy, List};
 use std::env;
-use log::error;
+
 
 fn easy_url() {
     let mut easy = Easy::new();
@@ -114,6 +114,7 @@ async fn handle_post_alerts(alert: Alert) -> Result<impl warp::Reply, Infallible
         Err(_) => Ok(warp::reply::with_status("Failed to send alert", warp::http::StatusCode::INTERNAL_SERVER_ERROR))
     }
 }
+
 
 
 
